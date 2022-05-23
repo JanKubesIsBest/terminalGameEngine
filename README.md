@@ -15,7 +15,7 @@ Camera object (currently I am drawing whole map), more collision functions and t
 
 # How to start
 You should start by creating game object and map. Map is bassically normal list of strings. Game take 3 arguments world, collision_map (that is basically world map but with arrays in it, not strings).
-# Objects
+
 That's basically on you... What I like is to have some main function and in ther have while loop with some running variable. Then you just need to clear terminal every frame and sleep for the time between the frames.
 `
     while (running):
@@ -28,7 +28,7 @@ That's basically on you... What I like is to have some main function and in ther
 
         sleep(1 / myGame.fps)
 `
-
+# Objects
 So, this game engine have similiar key features to godot. The main idea is to have parent object that has childs. 
 Let's start with the most basic thing you will meet in my example game, the object game. I would say that object game has only. one reallt important functions for you: add_new_child (and also add_new_child_to_the_start, but we will look on that when we will talk about viewports).
 The add_new_child function adds new child to the game tree. The childs in game tree are updated every do_game_logic function and they are updating in reverse loop (so the last is updating first). And that's actually all you need to know about the game object!
