@@ -31,7 +31,8 @@ That's basically on you... What I like is to have some main function and in ther
 So, this game engine have similiar key features to godot. The main idea is to have parent object that has childs. 
 Let's start with the most basic thing you will meet in my example game, the object game. I would say that object game has only. one reallt important functions for you: add_new_child (and also add_new_child_to_the_start, but we will look on that when we will talk about viewports).
 The add_new_child function adds new child to the game tree. The childs in game tree are updated every do_game_logic function and they are updating in reverse loop (so the last is updating first). And that's actually all you need to know about the game object!
-`#so let's write something:
+`
+#so let's write something:
 from src.game.game import game
 
 class myOwnGame(game):
