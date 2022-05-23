@@ -16,12 +16,11 @@ Camera object (currently I am drawing whole map), more collision functions and t
 # How to start
 You should start by creating game object and map. Map is bassically normal list of strings. Game take 3 arguments world, collision_map (that is basically world map but with arrays in it, not strings).
 
-That's basically on you... What I like is to have some main function and in ther have while loop with some running variable. Then you just need to clear terminal every frame and sleep for the time between the frames.
+That's basically on you... What I like is to have some main function and in ther have while loop with some running variable. Then you just need to clear terminal every frame and sleep for the time between the frames. You should also know that you need to clear canvas every time of drawing the canvas. If you want to draw canvas immediately and you don’t want to read through the docs, please use canvas object. You just pass the world to it and then call draw function. 
 `
     while (running):
         os.system('clear')
 
-        print(myGame.points)
         myGame.world = [[" "]*width for _ in range(heigth)]
 
         myGame.do_game_logic()
