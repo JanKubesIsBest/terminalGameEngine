@@ -14,19 +14,37 @@ Camera object (currently I am drawing whole map), more collision functions and t
 # Basic documentation
 
 # How to start
-You should start by creating game object and map. Map is bassically normal list of strings. Game take 3 arguments world, collision_map (that is basically world map but with arrays in it, not strings).
-
-That's basically on you... What I like is to have some main function and in ther have while loop with some running variable. Then you just need to clear terminal every frame and sleep for the time between the frames. You should also know that you need to clear canvas every time of drawing the canvas. If you want to draw canvas immediately and you don’t want to read through the docs, please use canvas object. You just pass the world to it and then call draw function. 
+The easiest way to start is this:
+ 
 ```
+    width = 30
+    height = 10
+
+    game_world = [[" "] * width for _ in range(height)]
+    game_world[1][1] = "f"
+    collision_world = [[[CollisionDot(None, None, None, None, None)] for _ in range(width)] for _ in range(height)]
+
+    myCanvas = Canvas(width, height, game_world)
+    myGame = Game(game_world, collision_world, 10)
+
     while (running):
         os.system('clear')
 
-        myGame.world = [[" "]*width for _ in range(heigth)]
+        myGame.world = [[" "] * width for _ in range(height)]
 
         myGame.do_game_logic()
 
+        myCanvas.pixels = myGame.canvas
+        myCanvas.draw()
+
         sleep(1 / myGame.fps)
 ```
+
+The most important parts of this are:
+- Initialization of the game object. That takes game_world variable, which is an array of strings. Collision_world variable which has same dimensions as world, but is filled with collision dots.
+- Fps -> self explanatory.
+- Canvas -> draws everything.
+- myGame.do_game_logic() calls every child of game class to do their logic (scroll more for details). Additionally you can add your own logic into it. 
 # Objects
 So, this game engine have similiar key features to godot. The main idea is to have parent object that has childs. 
 Let's start with the most basic thing you will meet in my example game, the object game. I would say that object game has only. one reallt important functions for you: add_new_child (and also add_new_child_to_the_start, but we will look on that when we will talk about viewports).

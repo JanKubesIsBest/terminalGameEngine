@@ -1,9 +1,9 @@
 from ast import List, Str
 from turtle import position
 import keyboard
-from src.body.body.bodyClass import body
+from src.body.body.bodyClass import Body
 
-class player(body):
+class Player(Body):
     def __init__(self, positionX: int, positionY: int, defaultSkin: str, id: int, parentReference: object, collideWith: List):
         super().__init__( id, positionX, positionY, parentReference)
 

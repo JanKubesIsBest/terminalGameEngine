@@ -1,7 +1,7 @@
 
 
-class game:
-    def __init__(self, canvas, collision_world,  fps):
+class Game:
+    def __init__(self, canvas, collision_world, fps):
         self.canvas = canvas
 
         self.all_objects = []
@@ -19,7 +19,7 @@ class game:
     def update_all_rooted_objects(self):
 
         for x in self.all_objects:
-            x[2].update(self.canvas, self.collision_world)
+            x[2].update(self.Canvas, self.collision_world)
 
     def add_new_object(self, object_name, object_reference):
         self.all_objects.append([(len(self.all_objects) + 1), object_name, object_reference])

@@ -1,11 +1,9 @@
 from ast import List, Str
-from re import I
-from turtle import position
-from src.body.body.bodyClass import body
-from src.body.player import player
+from src.body.body.bodyClass import Body
+from src.body.player import Player
 
-class collision_shape_detector(body):
-    def __init__(self, id: int, positionX: int, positionY: int, parentReference: player, shape: List, collideWith: List):
+class collision_shape_detector(Body):
+    def __init__(self, id: int, positionX: int, positionY: int, parentReference: Player, shape: List, collideWith: List):
         super().__init__(id, positionX, positionY, parentReference)
 
         self.shape = shape

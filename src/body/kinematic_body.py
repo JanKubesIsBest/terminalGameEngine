@@ -1,7 +1,7 @@
 from re import S
-from src.body.body.bodyClass import body
+from src.body.body.bodyClass import Body
 
-class kinematic_body(body):
+class kinematic_body(Body):
     #if there is only single frame (sprite), animate should be called false and in animations only one 2d array
     def __init__(self, positionX, positionY, defaultSkin, id, parentReference, animate, animations , firstAnimation):
         super().__init__(id, positionX, positionY, parentReference)

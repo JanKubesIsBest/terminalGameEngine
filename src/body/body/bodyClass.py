@@ -1,4 +1,4 @@
-class body:
+class Body:
     def __init__(self, id: int, positionX: int, positionY: int, parentReference: object):
         self.positionX = positionX
         self.positionY = positionY

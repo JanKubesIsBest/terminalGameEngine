@@ -1,4 +1,4 @@
-class canvas:
+class Canvas:
     def __init__(self, width, heigth, pixels):
 
         self.height = heigth

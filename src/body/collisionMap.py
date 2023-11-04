@@ -1,8 +1,8 @@
 from turtle import width
-from src.body.body.bodyClass import body
+from src.body.body.bodyClass import Body
 from src.body.collision_dot import collisionDot
 
-class TileMap(body):
+class TileMap(Body):
     def __init__(self, id: int, positionX: int, positionY: int, parentReference: object, name: str, group: str, heigth: int, width: int, tileSkin: str):
         super().__init__(id, positionX, positionY, parentReference)
         self.heigth = heigth
