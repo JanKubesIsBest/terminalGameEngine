@@ -1,4 +1,6 @@
-# terminalGameEngine
+# TerminalGameEngine
+Made by me when I was 14 years old, it is not updated anymore.
+
 Game engine for terminal games
 
 # How to create game?
